@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 
+
 public class PlatformsService(ILogger<PlatformsService> logger) : IPlatformsService
 {
     private volatile TrieNode _currentRoot = TrieNode.Empty;

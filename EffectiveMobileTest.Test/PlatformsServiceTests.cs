@@ -1,8 +1,18 @@
-﻿namespace AdService.Tests
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
+
+namespace AdService.Tests
+
 {
     public class PlatformsServiceTests
     {
-        private readonly PlatformsService _service = new();
+        private readonly PlatformsService _service;
+
+        public PlatformsServiceTests()
+        {
+            ILogger<PlatformsService> logger = NullLogger<PlatformsService>.Instance;
+            _service = new PlatformsService(logger);
+        }
 
         [Fact]
         public void Search_Returns_CorrectPlatforms_ForSimpleLocation()
