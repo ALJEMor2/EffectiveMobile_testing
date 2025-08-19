@@ -2,12 +2,12 @@
 
 Веб-сервис для **поиска рекламных площадок по локациям** с учетом вложенности.
 
----
+
 
 ## Требования
 - [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 
----
+
 
 ## Запуск сервиса
 
@@ -19,7 +19,7 @@ dotnet run
 После запуска сервис будет доступен по адресу:  
  [http://localhost:5000](http://localhost:5000)
 
----
+
 
 ## API Endpoints
 
@@ -42,7 +42,7 @@ dotnet run
 }
 ```
 
----
+
 
 ### Поиск площадок  
 **GET** `/api/platforms?location=/ru/svrd/revda`
@@ -60,7 +60,7 @@ dotnet run
 ]
 ```
 
----
+
 
 ## Тестирование
 
@@ -81,7 +81,7 @@ curl -X POST http://localhost:5000/api/platforms/upload -H "Content-Type: text/p
 curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
 ```
 
----
+
 
 ## Структура проекта
 ```
