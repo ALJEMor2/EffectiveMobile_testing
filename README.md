@@ -83,8 +83,8 @@ curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
 
 ## Структура проекта
 ```
-EffectiveMobileTest/       # Основной проект
-EffectiveMobileTest.Test/  # Тесты
-sample_data.txt            # Пример данных
-README.md                  # Инструкция
+EffectiveMobileTest/        Основной проект
+EffectiveMobileTest.Test/   Тесты
+sample_data.txt             Пример данных
+README.md                   Инструкция
 ```
