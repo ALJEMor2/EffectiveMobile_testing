@@ -1,0 +1,11 @@
+Яндекс.Директ:/ru
+Ревдинский рабочий:/ru/svrd/revda,/ru/svrd/pervik
+Газета уральских москвичей:/ru/msk,/ru/permobl,/ru/chelobl
+Крутая реклама:/ru/svrd
+Московские новости:/ru/msk
+Свердловская пресса:/ru/svrd
+Пермские вести:/ru/permobl
+Челябинский курьер:/ru/chelobl
+Екатеринбург сегодня:/ru/svrd/ekb
+Российская реклама:/ru
+Уральский медиа:/ru/svrd,/ru/permobl,/ru/chelobl 
