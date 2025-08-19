@@ -1,58 +1,92 @@
-Рекламные площадки - API сервис
+# Рекламные площадки — API сервис
 
-Веб сервис для поиска рекламных площадок по локациям с учетом вложенности. 
+Веб-сервис для **поиска рекламных площадок по локациям** с учетом вложенности.
 
+---
 
+## Требования
+- [.NET 9.0 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
 
-Требования
-.NET 9.0 SDK
+---
 
+## Запуск сервиса
 
-
-Запуск
-bash
+```bash
 cd EffectiveMobile
 dotnet run
+```
 
-Сервис будет доступен по адресу: http://localhost:5000
+После запуска сервис будет доступен по адресу:  
+ [http://localhost:5000](http://localhost:5000)
 
-API Endpoints
+---
 
-1. Загрузка площадок
-   http
-   POST /api/platforms/upload
-   Content-Type: text/plain
+## API Endpoints
 
+### Загрузка площадок  
+**POST** `/api/platforms/upload`  
+`Content-Type: text/plain`
+
+Пример данных:
+```
 Яндекс.Директ:/ru
 Ревдинский рабочий:/ru/svrd/revda,/ru/svrd/pervik
+```
 
-2. Поиск площадок
-   http
-   GET /api/platforms?location=/ru/svrd/revda
+Пример ответа (успешная загрузка):
+```json
+{
+  "status": "success",
+  "message": "Platforms uploaded successfully",
+  "count": 2
+}
+```
 
+---
 
+### Поиск площадок  
+**GET** `/api/platforms?location=/ru/svrd/revda`
 
-Тестирование
+Пример ответа:
+```json
+[
+  {
+    "name": "Ревдинский рабочий",
+    "locations": [
+      "/ru/svrd/revda",
+      "/ru/svrd/pervik"
+    ]
+  }
+]
+```
 
-bash
-Запуск тестов
+---
+
+## Тестирование
+
+### Запуск тестов
+```bash
 dotnet test
+```
 
+### Тестирование API
 
+Загрузка данных:
+```bash
+curl -X POST http://localhost:5000/api/platforms/upload -H "Content-Type: text/plain" -d @../sample_data.txt
+```
 
-Тестирование API
-curl -X POST http://localhost:5000/api/platforms/upload   
--H "Content-Type: text/plain"   
--d @../sample\_data.txt
-
+Поиск площадок:
+```bash
 curl "http://localhost:5000/api/platforms?location=/ru/svrd/revda"
+```
 
+---
 
-
-Структура
-
-EffectiveMobileTest/          Основной проект
-EffectiveMobileTest.Test/     Тесты
-sample\_data.txt               Пример данных
-README.md                     Инструкция
-
+## Структура проекта
+```
+EffectiveMobileTest/       # Основной проект
+EffectiveMobileTest.Test/  # Тесты
+sample_data.txt            # Пример данных
+README.md                  # Инструкция
+```
