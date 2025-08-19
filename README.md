@@ -49,7 +49,6 @@ dotnet run
 
 Пример ответа:
 ```json
-[
   {
     "name": "Ревдинский рабочий",
     "locations": [
@@ -57,7 +56,6 @@ dotnet run
       "/ru/svrd/pervik"
     ]
   }
-]
 ```
 
 
